@@ -11,26 +11,25 @@ public class consonant_count_recursive {
     return false;
   }
   static int consonant_count(String s) {
-    int counter = 0;
     // base case
     if (s.length() == 1) {
       if (Consonant(s.charAt(0)) == true) {
-        counter++;
+        return 1;
+      } else {
+        return 0;
       }
-    }
+    } else {
       // recursive case
       if (Consonant(s.charAt(0)) == true) {
-        counter++;
-      }
-      else {
-        return consonant_count(s.substring(1, s.length() - 1));
+        return 1 + consonant_count(s.substring(1, s.length()));
+      } else {
+        return consonant_count(s.substring(1, s.length()));
       }
     }
   }
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     String line = scan.nextLine();
-    int counter = 0;
-    System.out.println(consonant_count(line) + " consonants!")
+    System.out.println(consonant_count(line) + " consonants!");
   }
 }
