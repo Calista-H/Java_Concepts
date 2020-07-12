@@ -1,3 +1,4 @@
+// Figuring out if input is prime using division.
 import java.util.*;
 public class prime {
     static boolean Prime (int number) {
