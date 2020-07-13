@@ -4,11 +4,13 @@ public class prime_2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner (System.in);
         int number = scan.nextInt();
-        // Create an array storing all number values from zero to the number
+        // Create an array storing all number values from zero to the number.
         int[] array = new int[number + 1];
-        // Mark all multiples of i starting from 2 until half the number.
-        for (int i = 2; i < number; i++) {
-            for (int j = 1; j < number / 2; j++) {
+        // array[k] == 1 means not prime
+        // Check all possible factors for the input
+        for (int i = 2; i < number / 2; i++) {
+            // Mark all numbers that are multiples of current number as not prime.
+            for (int j = 1; i * j <= number + 1; j++) {
                 array[i * j] = 1;
             }
         }
